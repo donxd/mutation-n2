@@ -48,7 +48,7 @@ http://localhost:8080/docapi/index.html#/mutation
 ## Datos de prueba
 
 ```
-GET - localhost:8080/mutation/
+POST - localhost:8080/mutation/
 ```
 
 Secuencias sin mutación - se espera código 403
