@@ -31,8 +31,8 @@ public class WebService {
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "OK"), @ApiResponse(code = 400, message = "Objeto JSON malformado") })
 	@CrossOrigin(origins="*")
 	@RequestMapping(value="/", method=RequestMethod.POST)
-	public ResponseEntity<Object> obtenerEstado(@RequestBody @Valid Secuence secuence, BindingResult bindingResult){
-		if (bindingResult.hasErrors()) {
+	public ResponseEntity<Object> validateSecuence(@RequestBody @Valid Secuence secuence, BindingResult bindingResult){
+		if (bindingResult.hasErrors() || secuence.getDna() == null) {
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}
 
